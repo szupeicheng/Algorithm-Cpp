@@ -1,0 +1,41 @@
+void insertionSort2(int n, vector<int> arr) {
+for (unsigned i=1; i< arr.size(); i++ ) //std::cout << splitsort.at(i) << ' ' ;
+{
+int index;
+index = i;
+int p = arr.at(i);
+std::vector<int>::iterator rit = arr.begin()+index;
+for ( ; rit != arr.begin() -1 ; --rit) { 
+  vector<int>::iterator loindex=rit-1, cindex=rit;
+  if ( *loindex <= p ) { *cindex = p; break; 
+  }
+  else { *cindex = *loindex; }
+//  for (unsigned i=0; i< arr.size(); i++ ) std::cout << arr.at(i) << ' ' ;
+//  cout << endl;
+}
+  for (unsigned i=0; i< arr.size(); i++ ) std::cout << arr.at(i) << ' ' ;
+ cout << endl;
+}
+}
+
+
+
+void insertionSort2(int n, vector<int> arr) {
+for (unsigned i=1; i< splitsort.size(); i++ ) //std::cout << splitsort.at(i) << ' ' ;
+{
+int index;
+index = i;
+int p = arr.at(i);
+std::vector<int>::iterator rit = arr.begin()+index;
+for ( ; rit != arr.begin(); --rit) { 
+  vector<int>::iterator loindex=rit-1, cindex=rit;
+  if ( *loindex < p ) { *cindex = p; break; 
+  }
+  else { *cindex = *loindex; }
+  for (unsigned i=0; i< arr.size(); i++ ) std::cout << arr.at(i) << ' ' ;
+  cout << endl;
+}
+  for (unsigned i=0; i< arr.size(); i++ ) std::cout << arr.at(i) << ' ' ;
+  cout << endl;
+}
+}

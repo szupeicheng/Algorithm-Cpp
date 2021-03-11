@@ -1,0 +1,48 @@
+    void postOrder(Node *root) {
+    vector<Node> traversal;
+    vector<Node> postorder;
+    
+    
+    traversal.push_back(*root);
+    while (traversal.size() >0) {
+         Node p = traversal.back();
+         traversal.pop_back();
+         Node *ptr = &p; //cout << ptr->data << ' ';
+         postorder.push_back(p); //postorder.push_back(*ptr);
+         if (p.left != NULL) { Node *ptrl = ptr->left; traversal.push_back(*ptrl); }
+         if (p.right != NULL){ Node *ptrr = ptr->right; traversal.push_back(*ptrr); }  
+    }
+    for (vector<Node>::reverse_iterator it=postorder.rbegin(); it!=postorder.rend(); ++it)
+        cout<< it->data << ' ';
+    //below cout is correct 
+    //for (vector<Node>::iterator it=postorder.end(); it!=postorder.begin(); --it)
+        //cout<< (it-1)->data << ' ';
+    }
+
+
+    void postOrder(Node *root) {
+     Node *ptr = root;
+    if (ptr==NULL) return; 
+    postOrder(root->left);
+    postOrder(root->right);
+    cout << ptr->data << ' ';
+    }
+
+
+/* you only have to complete the function given below.  
+Node is defined as  
+
+class Node {
+    public:
+        int data;
+        Node *left;
+        Node *right;
+        Node(int d) {
+            data = d;
+            left = NULL;
+            right = NULL;
+        }
+};
+
+*/
+    

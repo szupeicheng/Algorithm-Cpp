@@ -1,0 +1,25 @@
+        // Write your code here.
+Node* ptr;
+ptr = root;
+if (ptr== NULL) {return 1; }
+else return max(height(ptr->left), height(ptr->right));
+ 
+
+
+Node* ptr;
+int h;
+ptr = root;
+if (ptr== NULL) {return 0; }
+else { h = 1 + max(height(ptr->left), height(ptr->right));
+       return h;}
+
+    int height(Node* root) {
+
+        Node* ptr;
+        int h;
+ptr = root;
+if (ptr== NULL) {return -1; }
+h = 1 + max(height(ptr->left), height(ptr->right));
+return h ; 
+
+    }

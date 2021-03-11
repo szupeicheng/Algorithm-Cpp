@@ -1,0 +1,64 @@
+    void levelOrder(Node * root) {
+deque<Node> traversal;
+
+if (root == NULL) return;
+traversal.push_back(*root);
+while ( !traversal.empty() ) {
+    Node p= traversal.front();
+    traversal.pop_front();
+    cout << p.data << ' ';
+    if (p.left != NULL) traversal.push_back(*p.left);
+    if (p.right != NULL) traversal.push_back(*p.right);  
+
+}
+    }
+
+
+deque<Node> traversal;
+
+if (root == NULL) return;
+traversal.push_back(*root);
+while ( !traversal.empty() ) {
+    Node p= traversal.pop_front();
+    cout << p.data << ' ';
+    if (p.left != NULL) traversal.push_back(p.left);
+    if (p.right != NULL) traversal.push_back(p.right);  
+
+}
+
+    vector<Node> traversal;
+    Node *ptr = root;
+    while (1) {   
+     while (ptr != NULL) { //cout << ptr->data << ' '; 
+     traversal.push_back(*ptr); ptr=ptr->left;}
+        
+    if ((ptr == NULL) && (traversal.size()== 0) ) return;
+     
+        Node p=traversal.back();//&ptr = traversal.back();    
+        traversal.pop_back();
+        //inorder.push_back(root->data);
+        ptr = &p; cout << ptr->data << ' ';
+        ptr = ptr->right;
+
+    }
+
+    void postOrder(Node *root) {
+    vector<Node> traversal;
+    vector<Node> postorder;
+    
+    
+    traversal.push_back(*root);
+    while (traversal.size() >0) {
+         Node p = traversal.back();
+         traversal.pop_back();
+         Node *ptr = &p; //cout << ptr->data << ' ';
+         postorder.push_back(p); //postorder.push_back(*ptr);
+         if (p.left != NULL) { Node *ptrl = ptr->left; traversal.push_back(*ptrl); }
+         if (p.right != NULL){ Node *ptrr = ptr->right; traversal.push_back(*ptrr); }  
+    }
+    for (vector<Node>::reverse_iterator it=postorder.rbegin(); it!=postorder.rend(); ++it)
+        cout<< it->data << ' ';
+    //below cout is correct 
+    //for (vector<Node>::iterator it=postorder.end(); it!=postorder.begin(); --it)
+        //cout<< (it-1)->data << ' ';
+    }

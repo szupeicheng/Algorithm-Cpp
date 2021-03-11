@@ -1,0 +1,54 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int n;
+    cin >> n;
+    vector<int> vec;
+    int t;
+    while ( n > 0 ) { //for (int i=0; i<n; i++) { 
+        cin >> t;
+        vec.push_back(t);
+        n--;
+    }
+    //sort(vec.begin(),vec.end()); 
+    for (unsigned i=1; i< vec.size(); i++ ) {
+        int index;
+        index = i;
+        int p = vec.at(i);
+        std::vector<int>::iterator rit = vec.begin()+index;
+        for ( ; rit != vec.begin() -1 ; --rit) { 
+            vector<int>::iterator loindex=rit-1, cindex=rit;
+            if ( *loindex <= p ) { *cindex = p; break; 
+            }
+        else { *cindex = *loindex; }
+        }
+    }
+    vector<int>::iterator it = vec.begin();
+    while (it != vec.end()) { cout << *it << ' '; ++it;}
+    return 0;
+}
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int n;
+    cin >> n;
+    vector<int> vec;
+    int t;
+    while ( n > 0 ) { //for (int i=0; i<n; i++) { 
+        cin >> t;
+        vec.push_back(t);
+        n--;
+    }
+    sort(vec.begin(),vec.end()); 
+    vector<int>::iterator it = vec.begin();
+    while (it != vec.end()) { cout << *it << ' '; ++it;}
+    return 0;
+}
+

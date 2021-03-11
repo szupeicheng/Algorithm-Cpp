@@ -1,0 +1,13 @@
+    vector<int> counting (100, 0); 
+    vector<int>::iterator it = arr.begin();
+    for (; it != arr.end(); ++it) {
+        int index = *it ;
+        //vector<int>::iterator cit = counting.begin() + index; 
+        counting.at(index)++;
+    }
+    return counting;
+
+
+vector<int> countingSort(vector<int> arr) {
+
+}

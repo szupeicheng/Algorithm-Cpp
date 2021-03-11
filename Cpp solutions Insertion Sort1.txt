@@ -1,0 +1,38 @@
+void insertionSort1(int n, vector<int> arr) {
+int p = arr.back(); 
+
+for ( vector<int>::reverse_iterator rit = arr.rbegin(); rit != arr.rend(); ++rit ) { 
+vector<int>::reverse_iterator loindex=rit+1, cindex=rit;
+  if ( *loindex < p ) { *cindex = p; break; }
+  else { *cindex = *loindex; }
+
+for ( vector<int>::iterator it = arr.begin(); it != arr.end(); ++it) std::cout << *it << 
+' ' ;
+std::cout << endl;
+
+}
+for ( vector<int>::iterator it = arr.begin(); it != arr.end(); ++it) std::cout << *it << ' ' ;
+std::cout << endl;
+
+
+}
+
+void insertionSort1(int n, vector<int> arr) {
+int p = arr.back(); 
+
+for ( vector<int>::reverse_iterator rit = arr.rbegin(); rit != arr.rend(); ++rit ) { 
+vector<int>::reverse_iterator loindex=rit+1, cindex=rit;
+  if ( *loindex < p ) { 
+      *cindex = p; 
+  for ( vector<int>::iterator it = arr.begin(); it != arr.end(); ++it) std::cout << *it << ' ' ;
+std::cout << endl;
+
+  break; 
+  }
+  else { *cindex = *loindex; 
+  for ( vector<int>::iterator it = arr.begin(); it != arr.end(); ++it) std::cout << *it << ' ' ;
+std::cout << endl;
+  }
+}
+
+}
