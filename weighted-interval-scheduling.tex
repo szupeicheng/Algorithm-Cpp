@@ -79,12 +79,12 @@ contents={\includegraphics[width=\paperwidth,height=\paperheight]{#2}}
 \hspace*{-25mm}
 \resizebox{18cm}{!} {
 \begin{tikzpicture} 
-\foreach \x in {0,...,9}
+\foreach \x in {0,...,11}
    \draw (\x cm,2pt) -- (\x cm,-2pt) node[anchor=north] {$\x$};
-\foreach \y in {0,...,7}
+\foreach \y in {0,...,9}
     \draw (2pt,\y cm) -- (-2pt,\y cm) node[anchor=east] {$\y$};
-\draw[[-{Latex[length=3mm]}] (0,0) -- (10,0) node [anchor= north]{};
-\draw[[-{Latex[length=3mm]}] (0,0) -- (0,8) node [anchor= south] {index};
+\draw[[-{Latex[length=3mm]}] (0,0) -- (12,0) node [anchor= north]{};
+\draw[[-{Latex[length=3mm]}] (0,0) -- (0,10) node [anchor= south] {index};
 
 \filldraw [fill=gray] (0,0.7) rectangle (3,1);
 \path (2.5, 1.2) node {$v_1$=2};
@@ -108,11 +108,70 @@ contents={\includegraphics[width=\paperwidth,height=\paperheight]{#2}}
 
 \end{tikzpicture}
 }
-\vspace*{10mm} \newline
+\vspace*{5mm} \newline
 \hspace*{30mm}
-{\LARGE The Weighted Interval Problem}
+{\LARGE The Weighted Interval Problem};
 
 
+\newpage
+\hspace*{-25mm}
+\resizebox{18cm}{!} {
+\begin{tikzpicture} 
+\foreach \x in {0,...,11}
+   \draw (\x cm,2pt) -- (\x cm,-2pt) node[anchor=north] {$\x$};
+\foreach \y in {0,...,9}
+    \draw (2pt,\y cm) -- (-2pt,\y cm) node[anchor=east] {$\y$};
+\draw[[-{Latex[length=3mm]}] (0,0) -- (12,0) node [anchor= north]{};
+\draw[[-{Latex[length=3mm]}] (0,0) -- (0,10) node [anchor= south] {index};
+
+\path (6.5,8) node (c1) {\small OPT(6)};
+\path (5,7) node (c2) {\small OPT(5)};
+\path (8,7) node (c3) {\small OPT(3)};
+\path (4, 6) node (c4) {\small OPT(4)};
+\path (5.5, 6) node (c5) {\small OPT(3)};
+\path (7.5, 6) node (c6) {\small OPT(2)};
+\path (9, 6) node (c7) {\small OPT(1)};
+\path (3,4.5) node (c8) {\small OPT(3)};
+\path (4.5,4.5) node (c9) {\small OPT(2)};
+\path (6,4.5) node (c10) {\small OPT(1)};
+\path (7.5,4.5) node (c11) {\small OPT(1)};
+\path (1.5,3) node (c12) {\small OPT(2)};
+\path (3,3) node (c13) {\small OPT(1)};
+\path (4.5,3) node (c14) {\small OPT(1)};
+\path (1.5,1.5) node (c15) {\small OPT(1)};
 
 
+\draw[[-{Latex[length=2mm]}] (c1) to (c2);
+\draw[[-{Latex[length=2mm]}] (c1) to (c3);
+\draw[[-{Latex[length=2mm]}] (c2) to (c4);
+\draw[[-{Latex[length=2mm]}] (c2) to (c5);
+\draw[[-{Latex[length=2mm]}] (c3) to (c6);
+\draw[[-{Latex[length=2mm]}] (c3) to (c7);
+\draw[[-{Latex[length=2mm]}] (c4) to (c8);
+\draw[[-{Latex[length=2mm]}] (c5) to (c9);
+\draw[[-{Latex[length=2mm]}] (c5) to (c10);
+\draw[[-{Latex[length=2mm]}] (c6) to (c11);
+\draw[[-{Latex[length=2mm]}] (c8) to (c12);
+\draw[[-{Latex[length=2mm]}] (c8) to (c13);
+\draw[[-{Latex[length=2mm]}] (c9) to (c14);
+\draw[[-{Latex[length=2mm]}] (c12) to (c15);
+
+\path (6.5, 9) node {Tree of Calls};
+
+\end{tikzpicture}
+}
+\vspace*{5mm} \newline
+\hspace*{30mm}
+{\LARGE The Weighted Interval Problem} \newline
+\vspace*{1mm} \newline
+\hspace*{-10mm} \parbox[t][20mm][l] {135mm} {
+\rule[1mm]{120mm}{1pt} \newline
+{\large \ttfamily Compute-Opt($j$)} \newline
+\hspace*{2mm} {\large \ttfamily If $j=0$ then} \newline
+\hspace*{5mm} {\large \ttfamily Return $0$} \newline
+\hspace*{2mm} {\large \ttfamily Else} \newline
+\hspace*{5mm} {\large \ttfamily Return max($v_j$+Compute-Opt(p($j$)), Compute-Opt($j-1$))} \newline
+\hspace*{2mm}  {\large \ttfamily Endif} \newline
+\rule[-1mm]{120mm}{1pt} \newline
+}
 \end{document}
