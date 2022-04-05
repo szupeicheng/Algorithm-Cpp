@@ -49,13 +49,16 @@ int main() {
 
   myObj.myString = "filename-6o.txt";
   myObj.myString_o="filename-oo.txt";
-
-  // Print caret values
-  //cout << myObj.myNum << "\n";
-
   cout << myObj.myString << "\n";
   cout << myObj.myString_o << "\n";
   myObj.myMethod_oo();  // Call the method
+
+  //myObj.myString = "filename-oo.txt";
+  //myObj.myString_o="filename-8o.txt";
+  //cout << myObj.myString << "\n";
+  //cout << myObj.myString_o << "\n";
+  //myObj.myMethod_8o();  // Call the method
+
 
   return 0;
 }
